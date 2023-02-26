@@ -63,8 +63,6 @@
 </div>
 <script>
 
-    
-//TTS
 'speechSynthesis' in window ? console.log("Web Speech API supported!") : console.log("Web Speech API not supported :-(")
 let speaker = new SpeechSynthesisUtterance();
 let synth = window.speechSynthesis;
@@ -112,18 +110,13 @@ function startImageScan() {
     var classifier = ml5.imageClassifier('./model/model.json');
 // Scan the uploaded image
 
-//alternatief
 //const featureExtractor = ml5.featureExtractor('MobileNet')
 // classifier = featureExtractor.classification()
 // classifier.load("./model.json") 
 // console.log(classifier)
 
 
-//alternatief
-
-
     classifier.classify(document.getElementById("uploadedImage"), imageScanResult);
-// element.innerHTML = "...";
 }
 
 function imageScanResult(error, results) {

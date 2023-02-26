@@ -1,5 +1,6 @@
 const video = document.getElementById('webcam')
 const featureExtractor = ml5.featureExtractor('MobileNet', modelLoaded)
+const options = { numLabels: 4 }
 const label = document.getElementById("label")
 let classifier
 
@@ -37,20 +38,13 @@ webcam.start()
 
 function modelLoaded(){
     console.log("The mobileNet model is loaded!")
-    classifier = featureExtractor.classification(options)
+    classifier = featureExtractor.classification(video, videoReady)
 
 }
 
 function videoReady(){
 
     console.log(classifier)
-}
-
-
-function add_image(){
-    const val = document.querySelector('input').value;
-    classifier.addImage(video, val, addedImage)
-    console.log(val+"  added")
 }
 
 function addSquirtle(){

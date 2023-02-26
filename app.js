@@ -1,5 +1,3 @@
-
-//TTS
 'speechSynthesis' in window ? console.log("Web Speech API supported!") : console.log("Web Speech API not supported :-(")
 let speaker = new SpeechSynthesisUtterance();
 let synth = window.speechSynthesis;
